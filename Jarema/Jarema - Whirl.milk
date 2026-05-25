@@ -283,7 +283,8 @@ warp_13=`    // noise grain on mid
 warp_14=`    float2 nuv = uv_orig * texsize.xy * texsize_noise_lq.zw;
 warp_15=`    float4 n = tex2D(sampler_noise_lq, nuv + rand_frame.xy);
 warp_16=`    ret.xyz += (n.xyz - 0.5) * 0.006 * saturate(q3 - 0.4);
-warp_17=`}
+warp_17=`    ret *= .97;
+warp_18=`}
 comp_1=`shader_body
 comp_2=`{
 comp_3=`    ret = tex2D(sampler_main, uv).xyz;
