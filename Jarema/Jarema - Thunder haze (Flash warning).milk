@@ -285,7 +285,8 @@ warp_18=`
 warp_19=`    // treble grain
 warp_20=`    float spark = (tex2D(sampler_noise_lq, noise_uv * 4.0 + rand_frame.yx).x - 0.5) * 2.0;
 warp_21=`    ret.xyz += spark * saturate(q2 - 0.55) * 0.03;
-warp_22=`}
+warp_22=`    ret *= .93 - bass_att*.02;
+warp_23=`}
 comp_1=`shader_body
 comp_2=`{
 comp_3=`    float3 col = tex2D(sampler_main, uv).xyz;
